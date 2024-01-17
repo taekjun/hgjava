@@ -18,7 +18,7 @@ public class Todo0116 {
 		// quit 값이 들어오면 반복문이 종료되면서 콘솔창에 <<end of prog>>
 
 		while(true) {
-	         System.out.print("홍길동");
+	         System.out.print("값을 입력>>> ");
 	         String input=scn.nextLine();
 	         if(input.equals("quit")) {
 	            break;
