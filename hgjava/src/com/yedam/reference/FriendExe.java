@@ -16,8 +16,10 @@ public class FriendExe {
 			System.out.println("1.등록 2.조회 3.수정 4.삭제 5.점수조회 6.분석 9.종료");
 									//5.점수조회는 입력한 점수 이상인 친구들만 출력, 6.평균점수:,최고점수: 구분해서 출력
 			int menu = Integer.parseInt(scn.nextLine());
+			//메뉴창에서 숫자가 아닌 글자나 빈칸에 앤터쳤을때 오류 안나게 수정해야함
+			
 			switch(menu) {
-			case 1: //등록			이름 안넣고 앤터치면 오류 안나게 수정하기
+			case 1: //등록			이름 안넣고 앤터치면 진행 안되도록 수정
 				System.out.println("이름>>> ");
 				String name = scn.nextLine();
 				System.out.println("몸무게>>> ");
@@ -90,14 +92,17 @@ public class FriendExe {
 				}
 				System.out.println("삭제완료.");
 				break;
-			case 5: //점수조회
-				System.out.println("기준 점수를 입력하세요.");			
-//				for(int i=0; i<friends.length; i++) {
-//					if(){
-//					}
-//				}
-//				System.out.println("asdf");	
-//				break;
+			case 5: //점수조회(입력한 점수 이상인 사람만 출력)
+				System.out.println("기준 점수를 입력하세요.");	
+				score = Integer.parseInt(scn.nextLine());
+				for(int i=0; i<friends.length; i++) {
+					if(friends[i] != null){
+						if(score < friends[i].score) {
+							System.out.println(friends[i].name);	
+						}
+					}
+				}
+				break;
 			case 6:	//분석(평균점수,최고점수 구분해서 출력)
 				double avg = 0;
 				double sum = 0;
@@ -113,10 +118,13 @@ public class FriendExe {
 					}
 				}
 				avg = sum / cnt;
-//				System.out.printf("평균:%.1f, 최고점수:%.1f",avg,max);
+				System.out.printf("평균점수:%.1f, 최고점수:%d\n",avg,max);
+				break;
 			case 9: //종료	
 				run = false;
 				System.out.println("종료합니다.");
+			default: 
+				System.out.println("값이 잘못됐습니다.");
 			}//end of switch
 		}// end of while
 		System.out.println("end of prog");
