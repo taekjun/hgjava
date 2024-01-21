@@ -40,7 +40,7 @@ public class FriendExe {
 		int age = 0;
 		
 		while(run) {
-			System.out.println("1.등록 2.목록 3.수정 4.삭제 9.종료");
+			System.out.println("1.등록 2.목록 3.수정 4.삭제 5.단건조회 9.종료");
 			int menu = Integer.parseInt(scn.nextLine());
 			
 			switch(menu) {
@@ -104,6 +104,15 @@ public class FriendExe {
 				}
 				break;
 			case 5: //단건조회
+				System.out.println("조회할 학생 연락처>>>");
+				phone = scn.nextLine();
+				Friend f1 = app.get(phone);
+				if(f1 != null) {
+					f1.showInfo();
+				}else {
+					System.out.println("잘못된 연락처 입니다.");
+				}
+				break;
 				
 			case 9: //종료
 				run = false;
