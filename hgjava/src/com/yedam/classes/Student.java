@@ -2,12 +2,13 @@ package com.yedam.classes;
 
 //학생번호,이름, 점수, 키:		속성
 //소개(학생번호, 이름, 점수)		동작(메소드)
-public class Student {
-	//필드
+public class Student {		//스튜던트라는 객체안에 번호,이름,점수,키라는 필드가 들어간다
+	//필드 선언
 	private String sno;		//프라이베이트 사용하면 클래스 안에서만 사용 가능함. 외부에서 사용하게 하려면 메소드 추가해야함.
 	private String sname;
 	private int score;
 	private double height;
+	private boolean onSchool;
 //	String sno;	//초기값 null
 //	String sname;
 //	int score;	//초기값 0
@@ -18,7 +19,7 @@ public class Student {
 	public Student(){
 		
 	}
-	public Student(String no, String name) {		//실행파일쪽에 s2
+	public Student(String no, String name) {		//실행파일쪽에 s2	//퍼블릭이 없을경우 다른 패키지에서 사용이 불가능해진다.
 		sno = no;
 		sname = name;
 	}
@@ -35,7 +36,7 @@ public class Student {
 		this.height = height;	//height는 여기서 정의하고 있기 때문에 묶을 수 없다.
 	}
 	//메소드
-	void showInfo() {		//void는 반환되는 타입이 없습니다 라는 의미. 그래서 return이 따로 안들어감
+	public void showInfo() {		//void는 반환되는 타입이 없습니다 라는 의미. 그래서 return이 따로 안들어감
 		System.out.printf("번호는 %s, 이름은 %s, 점수는 %d입니다.\n",this.sno, this.sname, this.score);	//변수 헷갈리는게 없으면 this. 안붙여도 됨
 	}								
 	
@@ -68,5 +69,12 @@ public class Student {
 	public void setHeight(double height) {
 		this.height = height;
 	}
+	public boolean isOnSchool() {
+		return onSchool;
+	}
+	public void setOnSchool(boolean onSchool) {
+		this.onSchool = onSchool;
+	}
+	
 	
 }

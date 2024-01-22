@@ -2,10 +2,12 @@ package com.yedam.classes.friend;
 
 //친구이름, 연락처, 나이를 관리
 public class Friend {
+	//필드
 	private String name;
 	private String phone;
 	private int age;
 	
+	//생성자
 	public Friend(String name, String phone, int age) {
 		this.name = name;
 		this.phone = phone;
