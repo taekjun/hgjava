@@ -1,6 +1,7 @@
 package com.yedam.classes.inherit;
 
-import lombok.Data;	//필드만 선언하면 알아서 필요한 요소 자동설정해줌
+import lombok.Data;		//필드만 선언하면 알아서 필요한 요소 자동설정해줌
+
 
 //이름, 연락처 (Friend)
 //이름, 연락처, 학교, 전공 (UnivFriend)
