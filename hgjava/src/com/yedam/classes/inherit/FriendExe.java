@@ -9,9 +9,13 @@ public class FriendExe {
 		boolean run = true;
 		FriendApp app = new FriendApp();
 		while(run) {
+			int menu = 0;
 			System.out.println("1.등록 2.조회 3.수정 4.삭제 9.종료");
-			int menu = Integer.parseInt(scn.nextLine());
-			
+			try {
+				menu = Integer.parseInt(scn.nextLine());
+			} catch (NumberFormatException e) {
+				System.out.println("숫자를 입력하세요");
+			}
 			switch(menu) {
 			case 1://등록 1)이름연락처 2)학교친구 3)회사친구
 				System.out.println("1.친구 2.회사 3.학교");

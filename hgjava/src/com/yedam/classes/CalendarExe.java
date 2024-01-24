@@ -28,7 +28,8 @@ public class CalendarExe {
 	}
 	
 	static void drawCalendar(Date date) {		//1900년 시작 염두해서 date값과 똑같은 달력 나오도록.
-
+		
+		
 	}	
 //	static void drawCalendar(int year, int month) {
 //
